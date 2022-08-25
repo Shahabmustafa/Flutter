@@ -1,103 +1,165 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/src/source.dart';
 
-void main() {
-  runApp(
-    MyApp()
-  );
-}
 
-class MyApp extends StatelessWidget {
+// void main() {
+//   generateWordPairs().forEach(print);
+// }
+
+void main() => runApp(XylophoneApp());
+
+class XylophoneApp extends StatelessWidget {
+  void PlaySound(int number){
+    final player =AudioPlayer();
+    player.play(AssetSource('note$number.wav'));
+  }
+
+  // const XylophoneApp ({Key key}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    home: Scaffold(
-    backgroundColor: Colors.black,
-  body: SafeArea(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        CircleAvatar(
-            radius: 50.0,
-          backgroundImage: AssetImage('images/download2.jpeg'),
-        ),
-        Text(
-          'Shahab Mustafa',
-          style: TextStyle(
-            fontFamily: 'DancingScript',
-            fontSize: 40.0,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
+      home: Scaffold(
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+              child: TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.black,
+              ),
+              onPressed: (){
+                PlaySound(1);
+              },
+            ),
+          ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  onPressed: (){
+                    PlaySound(2);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
+                  onPressed: (){
+                    PlaySound(3);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  onPressed: (){
+                    PlaySound(3);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
+                  onPressed: (){
+                    PlaySound(5);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  onPressed: (){
+                    PlaySound(5);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
+                  onPressed: (){
+                    PlaySound(7);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  onPressed: (){
+                    PlaySound(2);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
+                  onPressed: (){
+                    PlaySound(3);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  onPressed: (){
+                    PlaySound(3);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
+                  onPressed: (){
+                    PlaySound(5);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                  ),
+                  onPressed: (){
+                    PlaySound(5);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
+                  onPressed: (){
+                    PlaySound(7);
+                  },
+                ),
+              ),
+            ],
           ),
         ),
-        Text(
-          'Flutter Developer',
-          style: TextStyle(
-            fontFamily: 'DancingScript',
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-            color: Colors.white
-          ),
-        ),
-        SizedBox(
-          height: 20.0,
-          width: 300.0,
-      child: Divider(
-        color: Colors.white,
-        thickness: 2.0,
       ),
-        ),
-        Container(
-          color: Colors.white,
-          padding: EdgeInsets.all(10.0),
-          margin: EdgeInsets.symmetric(vertical: 20.0,horizontal: 30.0),
-          child: Row(
-            children: <Widget>[
-              Icon(Icons.phone,
-                size: 30.0,
-              ),
-              SizedBox(
-                width: 20.0,
-              ),
-              Text(
-                '+923112445554',
-                style: TextStyle(
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              )
-            ],
-          ),
-        ),
-        Container(
-          color: Colors.white,
-          padding: EdgeInsets.all(10.0),
-          margin: EdgeInsets.symmetric(vertical: 20.0,horizontal: 30.0),
-          child: Row(
-            children: <Widget>[
-              Icon(Icons.email,
-                size: 30.0,
-              ),
-              SizedBox(
-                width: 20.0,
-              ),
-              Text(
-                'shahabmustafa57@gmail.com',
-                style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.bold
-                ),
-              )
-            ],
-          ),
-        ),
-      ],
-    ),
-  ),
-  ),
-  );
+    );
   }
 }
-
-
-
